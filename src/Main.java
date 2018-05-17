@@ -3,17 +3,20 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		Graph graph = new Graph();
+		
 		Node batata = new Node("batata");
 		Node cenoura = new Node("cenoura");
 		Node beterraba = new Node("beterraba");
 		
-		batata.addLink(cenoura);
-		beterraba.addLink(batata);
+		Node[] nodes = {cenoura,beterraba};
+		
+		graph.addNode(batata, nodes);
 		
 		batata.printNeighborhood();
-		System.out.println("\n");
+		System.out.println("");
 		cenoura.printNeighborhood();
-		System.out.println("\n");
+		System.out.println("");
 		beterraba.printNeighborhood();
 	}
 }

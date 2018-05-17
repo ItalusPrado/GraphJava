@@ -11,16 +11,15 @@ public class Node {
 		this.name = name;
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
 	public int neighborhoodSize() {
 		return neighborhood.size();
 	}
 	
-	public void addLink(Node newNode) {
-		neighborhood.add(newNode);
-		newNode.addNode(this);
-	}
-	
-	public void addNode(Node newNode) {
+	public void addEdge(Node newNode) {
 		neighborhood.add(newNode);
 	}
 	
