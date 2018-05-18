@@ -7,6 +7,10 @@ public class Node {
 	private List<Node> neighborhood = new ArrayList<>();
 	//private Node[] neighborhood new ;
 	
+	public List<Node> getNeighborhood() {
+		return neighborhood;
+	}
+
 	public Node(String name) {
 		this.name = name;
 	}

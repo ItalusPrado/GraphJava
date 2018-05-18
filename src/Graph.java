@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,5 +34,38 @@ public class Graph {
 				arrayLinks[i].addEdge(newNode);
 			}
 		}
+	}
+	
+	public void generateGraph() {
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter("testandoGraph.txt", "UTF-8");
+			writeOnFile(writer);
+			
+			System.out.println("File Succesfull");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public List<String> getNodeNames() {
+		return this.nodeNames;
+	}
+	
+	private void writeOnFile(PrintWriter writer){
+		writer.println("digraph G {");
+		for (Node node : nodes) {
+			for (Node linkNode : node.getNeighborhood()) {
+				writer.println("	"+node.getName()+" -- "+linkNode.getName()+" [label=\"\"]; ");
+			}
+			
+		}
+		writer.println("}");
+		writer.close();
 	}
 }

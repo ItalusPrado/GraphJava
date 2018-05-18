@@ -18,5 +18,7 @@ public class Main {
 		cenoura.printNeighborhood();
 		System.out.println("");
 		beterraba.printNeighborhood();
+		
+		graph.generateGraph();
 	}
 }
