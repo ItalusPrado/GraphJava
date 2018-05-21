@@ -39,7 +39,7 @@ public class Graph {
 	public void generateGraph() {
 		PrintWriter writer;
 		try {
-			writer = new PrintWriter("testandoGraph.txt", "UTF-8");
+			writer = new PrintWriter("graph.txt", "UTF-8");
 			writeOnFile(writer);
 			
 			System.out.println("File Succesfull");
@@ -58,12 +58,15 @@ public class Graph {
 	}
 	
 	private void writeOnFile(PrintWriter writer){
-		writer.println("digraph G {");
+		List<String> names = new ArrayList<>();
+		writer.println("graph {");
 		for (Node node : nodes) {
 			for (Node linkNode : node.getNeighborhood()) {
-				writer.println("	"+node.getName()+" -- "+linkNode.getName()+" [label=\"\"]; ");
+				if (!names.contains(linkNode.getName())){
+					writer.println("	"+node.getName()+" -- "+linkNode.getName());
+				}
 			}
-			
+			names.add(node.getName());
 		}
 		writer.println("}");
 		writer.close();

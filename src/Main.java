@@ -5,20 +5,13 @@ public class Main {
 		
 		Graph graph = new Graph();
 		
-		Node batata = new Node("batata");
-		Node cenoura = new Node("cenoura");
-		Node beterraba = new Node("beterraba");
+		Node nodeA = new Node("a");
+		Node nodeB = new Node("b");
+		Node nodeC = new Node("c");
 		
-		Node[] nodes = {cenoura,beterraba};
+		Node[] nodes = {nodeB,nodeC};
 		
-		graph.addNode(batata, nodes);
-		
-		batata.printNeighborhood();
-		System.out.println("");
-		cenoura.printNeighborhood();
-		System.out.println("");
-		beterraba.printNeighborhood();
-		
+		graph.addNode(nodeA, nodes);
 		graph.generateGraph();
 	}
 }

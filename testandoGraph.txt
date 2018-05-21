@@ -1,6 +1,0 @@
-digraph G {
-	batata -- cenoura [label=""]; 
-	batata -- beterraba [label=""]; 
-	cenoura -- batata [label=""]; 
-	beterraba -- batata [label=""]; 
-}
